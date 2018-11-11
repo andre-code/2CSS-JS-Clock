@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 html {
-  background: #000;
+  background: #e8e8e8;
   font-family: 'helvetica neue';
   text-align: center;
   font-size: 10px;
@@ -13,20 +14,24 @@ body {
   min-height: 100vh;
   align-items: center;
 }
-
+.content {
+  width: 100%;
+}
+h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 48px;
+  text-shadow: 3px 1px 11px rgb(41, 199, 214);
+  color: rgb(41, 199, 214);
+}
 .clock {
   width: 30rem;
   height: 30rem;
-  border: 20px solid rgb(6, 207, 56),
+  border: 2px solid rgb(205, 249, 255);
   border-radius: 50%;
   margin: 50px auto;
   position: relative;
   padding: 2rem;
-  box-shadow:
-    0 0 0 4px rgb(6, 207, 56),
-    inset 0 0 0 3px #EFEFEF,
-    inset 0 0 10px black,
-    0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 65px -3px rgb(41, 199, 214);
 }
 
 .clock-face {
@@ -36,13 +41,41 @@ body {
   transform: translateY(-3px); /* account for the height of the clock hands */
 }
 .hand { 
-  width: 50%;
-  height: 6px;
-  background: #000;
   position: absolute;
   top: 50%;
   transform-origin: 100%;
   transform: rotate(90deg) ;
   transition: all 0.5s;
   transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hour-hand { 
+  width: 20%;
+  margin-left: 30%;
+  height: 12px;
+  background: #fff;
+  z-index: 2;
+}
+.min-hand { 
+  width: 40%;
+  margin-left: 10%;
+  height: 8px;
+  background: #fff;
+  z-index: 1;
+}
+.sec-hand { 
+  width: 50%;
+  height: 4px;
+  background: #fff;
+  z-index: 0;
+}
+.point {  
+  position: absolute;
+  top: 48%;
+  left: 45%;
+  background: #c2c5c5;
+  width: 25px;
+  height: 25px;
+  border-radius:50%;
+  z-index: 3; 
 }
